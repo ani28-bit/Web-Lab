@@ -62,10 +62,15 @@ Validation errors add `"errors": [{"field": "seats", "message": "must be at leas
 
 ## Try it by hand (curl)
 ```bash
-curl -i -X POST localhost:5000/students -H 'Content-Type: application/json' -d '{"name":"Rahim","email":"rahim@example.com"}'
-curl -i -X POST localhost:5000/courses  -H 'Content-Type: application/json' -d '{"code":"CSE3102L","title":"Web Lab","seats":1}'
-curl -i -X POST localhost:5000/enrollments -H 'Content-Type: application/json' -d '{"studentId":1,"courseId":1}'
-curl -i -X POST localhost:5000/enrollments -H 'Content-Type: application/json' -d '{"studentId":1,"courseId":1}'   # 409
+curl -i -X POST http://localhost:5000/students -H "Content-Type: application/json" -d "{\"name\":\"Rahim\",\"email\":\"rahim@example.com\"}"
+
+curl -i -X POST http://localhost:5000/courses -H "Content-Type: application/json" -d "{\"code\":\"CSE3102L\",\"title\":\"Web Lab\",\"seats\":1}"
+
+curl -i -X POST http://localhost:5000/enrollments -H "Content-Type: application/json" -d "{\"studentId\":1,\"courseId\":1}"
+
+curl -i -X POST http://localhost:5000/enrollments -H "Content-Type: application/json" -d "{\"studentId\":1,\"courseId\":1}"
+
+  # 409
 ```
 
 ## Configuration
